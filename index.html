@@ -79,46 +79,46 @@
         </div>
 
         <!-- Run the game code -->
-        <script type="text/javascript" src="html5game/Metroidvania.js?DXFBC=1961261739"></script>
+        <script type="text/javascript" src="html5game/Metroidvania.js?ECZZB=1338273643"></script>
         <script>window.onload = GameMaker_Init;
-        
-            // Scaling
+            
+                // Scaling
 
-            var game_width = 0;
-            var game_height = 0;
+                var game_width = 0;
+                var game_height = 0;
 
-            function scaler() {
-                var gameDiv = document.getElementById('gm4html5_div_id');
-                var aspect = 16 / 9;
-                //load current values
-                var max_width = window.innerWidth;
-                var max_height = window.innerHeight;
-                game_width = max_width;
-                game_height = max_height;
+                function scaler() {
+                    var gameDiv = document.getElementById('gm4html5_div_id');
+                    var aspect = 16 / 9;
+                    //load current values
+                    var max_width = window.innerWidth;
+                    var max_height = window.innerHeight;
+                    game_width = max_width;
+                    game_height = max_height;
 
-                if ((max_width / aspect) > max_height) {
-                    game_width = max_height * aspect;
-                } else {
-                    game_height = max_width / aspect;
+                    if ((max_width / aspect) > max_height) {
+                        game_width = max_height * aspect;
+                    } else {
+                        game_height = max_width / aspect;
+                    }
+
+                    gameDiv.style.width = game_width + 'px';
+                    gameDiv.style.height = game_height + 'px';
+
+                    var canvas = document.getElementById('canvas');
+                    canvas.width = game_width;
+                    canvas.height = game_height;
                 }
 
-                gameDiv.style.width = game_width + 'px';
-                gameDiv.style.height = game_height + 'px';
+                function getBrowserWidth() {
+                    return game_width;
+                }
 
-                var canvas = document.getElementById('canvas');
-                canvas.width = game_width;
-                canvas.height = game_height;
-            }
+                function getBrowserHeight() {
+                    return game_height;
+                }
 
-            function getBrowserWidth() {
-                return game_width;
-            }
-
-            function getBrowserHeight() {
-                return game_height;
-            }
-
-            window.addEventListener('resize', scaler, false);
-            </script>
+                window.addEventListener('resize', scaler, false);
+        </script>
     </body>
 </html>
